@@ -14,10 +14,10 @@ if __name__=='__main__':
 
         def score_average(self):
             if not self.exam_scores:
-                print("Студент еще не сдал ни одного экзамена")
+                print("The student has not passed any exams yet")
                 return
             average_score = sum(self.exam_scores) / len(self.exam_scores)
-            print(f"Средний балл студента {self.first_name} {self.last_name} равен {average_score}")
+            print(f"Student GPA {self.first_name} {self.last_name} equals {average_score}")
             return average_score
 
         def course_passed(self):
