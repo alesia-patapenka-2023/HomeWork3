@@ -1,30 +1,32 @@
-if __name__=='__main__':
-    class Student:
-        def __init__(self, student_id, first_name, last_name):
-            self.student_id = student_id
-            self.first_name = first_name
-            self.last_name = last_name
-            self.exam_scores = []
+class Student:
+    def __init__(self, student_id, first_name, last_name):
+        self.student_id = student_id
+        self.first_name = first_name
+        self.last_name = last_name
+        self.exam_scores = []
 
-        def add_score(self, score):
-            self.exam_scores.append(score)
+    def add_score(self, score):
+        self.exam_scores.append(score)
 
-        def show_scores(self):
-            print(*self.exam_scores)
+    def show_scores(self):
+        print(*self.exam_scores)
 
-        def score_average(self):
-            if not self.exam_scores:
-                print("The student has not passed any exams yet")
-                return
-            average_score = sum(self.exam_scores) / len(self.exam_scores)
-            print(f"Student GPA {self.first_name} {self.last_name} equals {average_score}")
-            return average_score
+    def score_average(self):
+        if not self.exam_scores:
+            print("The student has not passed any exams yet")
+            return
+        average_score = sum(self.exam_scores) / len(self.exam_scores)
+        print(f"Student GPA {self.first_name} {self.last_name} equals {average_score}")
+        return average_score
 
-        def course_passed(self):
-            if len([score for score in self.exam_scores if score > 60]) >= 3:
-                return True
-            else:
-                return False
+    def course_passed(self):
+        if len([score for score in self.exam_scores if score > 60]) >= 3:
+            return True
+        else:
+            return False
+
+
+if __name__ == '__main__':
     student1 = Student(1, "John", "Doe")
     student1.add_score(100)
     student1.add_score(95)
